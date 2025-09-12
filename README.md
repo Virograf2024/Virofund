@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Virofund Landing Page
+
+A modern, mobile-first landing page for Virofund, built with [Next.js](https://nextjs.org), React, and Firebase.
+
+## Features
+
+- Waitlist signup with Firebase integration
+- Animated progress bar for founding member spots
+- Responsive design for mobile and desktop
+- Sections: Hero, Features, How It Works, Testimonials, Waitlist, Footer
+- Sidebar navigation for mobile
+- Styled with custom CSS and [react-awesome-reveal](https://github.com/dennismorello/react-awesome-reveal) animations
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
+   ```sh
+   npm install --legacy-peer-deps
+   ```
+2. **Set up environment variables:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   - Copy `.env.local` and fill in your Firebase credentials.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Run the development server:**
+   ```sh
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [`src/app`](src/app) – Main app files, layout, and styles
+- [`src/components`](src/components) – Reusable UI components and sections
+- [`src/lib`](src/lib) – Firebase and authentication logic
 
-## Learn More
+## Firebase Integration
 
-To learn more about Next.js, take a look at the following resources:
+- Configure your Firebase project in [`src/lib/firebase.ts`](src/lib/firebase.ts).
+- Waitlist submissions are handled in [`src/lib/auth.ts`](src/lib/auth.ts).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Edit [`src/app/MobileLanding.tsx`](src/app/MobileLanding.tsx) to change the landing page layout.
+- Update styles in [`src/app/MobileLanding.css`](src/app/MobileLanding.css) and [`src/app/page.module.css`](src/app/page.module.css).
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploy easily on [Vercel](https://vercel.com/) or any platform supporting Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is private and not available for open source usage

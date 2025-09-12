@@ -1,3 +1,4 @@
+"use client";
 import MobileLanding from "./MobileLanding";
 
 const Index = () => {
