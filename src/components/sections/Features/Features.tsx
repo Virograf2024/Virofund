@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 
 function Features() {
   return (
-    <Fade direction="up" className="fade" triggerOnce>
+    <Fade direction="up" className="fade" triggerOnce fraction={0.3}>
       <section className="features">
         <div className="feature-badge">
           Why Startups Fail More Often Than They Succeed

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -10,31 +11,32 @@ function Footer() {
       <div>
         <div className="footer-contact" id="contact">
           <span className="icon">📧</span>
-          <a href="mailto:virofund@gmail.com">virofund@gmail.com</a>
+          <a href="mailto:Virograf2024@gmail.com">Virograf2024@gmail.com</a>
         </div>
         <div className="footer-contact">
           <span className="icon">📞</span>
-          <span>+234 816 312 2231, +234 816 312 2231</span>
+          <span>+234 916 660 1771, +234 703 416 5005</span>
         </div>
         <div className="socials">
-          <Image
-            src="/linkedin-svgrepo-com.svg"
-            alt="LinkedIn Logo"
-            width={30}
-            height={30}
-          />
-          <Image
-            src="/whatsapp-svgrepo-com.svg"
-            alt="Whatsapp Logo"
-            width={30}
-            height={30}
-          />
-          <Image
-            src="/twitter-svgrepo-com.svg"
-            alt="Twitter Logo"
-            width={30}
-            height={30}
-          />
+          <Link
+            href="https://www.linkedin.com/company/virograf-inc/"
+            target="_blank"
+          >
+            <Image
+              src="/linkedin-svgrepo-com.svg"
+              alt="LinkedIn Logo"
+              width={30}
+              height={30}
+            />
+          </Link>
+          <Link href="https://x.com/virograf?t=qulOxaKJWHwqOTznLEiQbg&s=08">
+            <Image
+              src="/twitter-svgrepo-com.svg"
+              alt="Twitter Logo"
+              width={30}
+              height={30}
+            />
+          </Link>
         </div>
         {/* Copyright */}
         <p className="footer-copy">©ViroFund 2025</p>

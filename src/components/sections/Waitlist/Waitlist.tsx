@@ -34,6 +34,7 @@ function Waitlist() {
                   animate
                   animationDuration={2500}
                   iterations={5}
+                  strokeWidth={3}
                   color="#22c55e"
                 >
                   Build

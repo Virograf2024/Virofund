@@ -19,11 +19,12 @@ function Hero() {
                 type="underline"
                 show={inView}
                 animate
-                animationDuration={2500}
+                animationDuration={2000}
                 padding={1}
-                iterations={5}
+                iterations={3}
                 animationDelay={6}
                 color="#fff"
+                strokeWidth={3}
               >
                 African
               </RoughNotation>{" "}
