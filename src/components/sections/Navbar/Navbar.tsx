@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Sidebar from "@/components/sidebar/Sidebar";
+import Button from "@/components/button/Button";
 
 function Navbar() {
   const [isShown, setIsShown] = useState(false);
@@ -15,6 +16,7 @@ function Navbar() {
           height={70}
           className="logo-img"
         />
+        {/* <p>By Virograf</p> */}
       </div>
       <div className="nav-children desktop">
         <a href="#how-it-works" className="nav-child">
@@ -27,7 +29,9 @@ function Navbar() {
           Contact us
         </a>
       </div>
-      <div className="desktop product nav-product">View Product</div>
+      <div className="nav-child">
+        <Button isDisabled={true} text="View Product" hasImage={false} />
+      </div>
 
       <div className="hamburger" onClick={() => setIsShown(!isShown)}>
         <Image

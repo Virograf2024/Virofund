@@ -5,6 +5,7 @@ import { RoughNotation } from "react-rough-notation";
 import { Fade } from "react-awesome-reveal";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Button from "@/components/button/Button";
 
 function Hero() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false });
@@ -36,18 +37,11 @@ function Hero() {
             to build tomorrow’s billion dollar companies.
           </p>
           <a href="#waitlist" className="link">
-            <button
-              type="button"
-              className="link-btn cta-button primary flex items-center gap-1"
-            >
-              <Image
-                src="/Frame 1171275225.png"
-                alt="Icon"
-                width={40}
-                height={20}
-              />
-              Join the first 500 founders
-            </button>
+            <Button
+              text="Join the first 500 founders"
+              hasImage={true}
+              imageSrc="/Frame 1171275225.png"
+            />
           </a>
         </Fade>
       </article>
