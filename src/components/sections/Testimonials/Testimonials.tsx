@@ -27,11 +27,11 @@ function Testimonials() {
             <div className="founding-member-card">
               {/* Headline */}
               <div className="headline">
-                <h2 className="highlight-text match-desc">
+                <h2 className="section-title founding-member-title">
                   Be Remembered as One of the First 500
                 </h2>
                 {/* Description */}
-                <p className="description match-desc">
+                <p className="match-description text-dark">
                   Your name will go down as part of the community that started
                   it all. Join today and claim your spot as a Founding Builder
                   of Virofund.
@@ -39,7 +39,7 @@ function Testimonials() {
                 {/* CTA Button */}
                 <button
                   onClick={() => router.push("/#waitlist")}
-                  className="cta-button"
+                  className="cta-button founding-member-button"
                 >
                   Claim Your Spot
                 </button>

@@ -17,8 +17,8 @@ function Step({ ...props }: StepProps) {
         <div className="step-image-container">
           <div className="step-icon">
             <Image
-              width={200}
-              height={200}
+              width={900}
+              height={900}
               src={props.imageSrc}
               alt={props.alt}
             />

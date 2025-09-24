@@ -44,15 +44,17 @@ function Form() {
       {({ isSubmitting }) => (
         <FormikForm
           ref={ref}
-          style={{
-            boxShadow: inView ? "0 6px 20px rgba(0, 0, 0, 0.2)" : "none",
-            transition: "box-shadow 0.3s ease-in-out 0.5s",
-          }}
+          // style={{
+          //   boxShadow: inView ? "0 6px 20px rgba(0, 0, 0, 0.2)" : "none",
+          //   transition: "box-shadow 0.3s ease-in-out 0.5s",
+          // }}
           className="waitlist-form"
           id="waitlist"
         >
           <div>
-            <label>Name</label>
+            <label>
+              <p className="label">Name</p>
+            </label>
             <Field
               type="text"
               name="name"
@@ -61,7 +63,9 @@ function Form() {
             />
           </div>
           <div>
-            <label>Email</label>
+            <label>
+              <p className="label">Email</p>
+            </label>
             <Field
               type="email"
               name="email"
@@ -76,6 +80,9 @@ function Form() {
           >
             {isSubmitting ? "Saving..." : "Join the waitlist – 500 spot left"}
           </button>
+          <p className="privacy-note">
+            We respect your privacy, unsubscribe anytime
+          </p>
         </FormikForm>
       )}
     </Formik>

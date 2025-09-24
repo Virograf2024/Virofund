@@ -29,13 +29,13 @@ function Navbar() {
           Contact us
         </a>
       </div>
-      <div className="nav-child">
+      {/* <div className="nav-child">
         <Button isDisabled={true} text="View Product" hasImage={false} />
-      </div>
+      </div> */}
 
       <div className="hamburger" onClick={() => setIsShown(!isShown)}>
         <Image
-          src="/hamburger-menu-svgrepo-com.svg"
+          src="/svgs/hamburger.svg"
           className="img"
           width={50}
           height={50}

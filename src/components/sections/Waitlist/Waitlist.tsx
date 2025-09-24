@@ -12,45 +12,35 @@ function Waitlist() {
       {/* Waitlist Card */}
       <div className="waitlist">
         <section className="waitlist-and-image">
-          <div className="waitlist-img">
-            <Image
-              src="/image.svg"
-              alt="Hero Image"
-              width={400}
-              height={400}
-              className="image"
-            />
-          </div>
           <div className="waitlist-child">
-            <div className="waitlist-badge">
-              Only 500 spots + founding cohort
+            <div>
+              <div className="waitlist-badge badge">
+                Only 500 spots + founding cohort
+              </div>
+              <h2 className="waitlist-title">
+                Don’t Just Dream.{" "}
+                <span ref={ref}>
+                  <RoughNotation
+                    type="underline"
+                    show={inView}
+                    animate
+                    animationDuration={2500}
+                    iterations={5}
+                    strokeWidth={3}
+                    color="#22c55e"
+                  >
+                    Build
+                  </RoughNotation>
+                </span>
+              </h2>
+              <p className="waitlist-subtitle">
+                Join the waitlist and we’ll notify you as soon as early access
+                opens.
+              </p>
             </div>
-            <h2 className="waitlist-title">
-              Don’t Just Dream.{" "}
-              <span ref={ref}>
-                <RoughNotation
-                  type="underline"
-                  show={inView}
-                  animate
-                  animationDuration={2500}
-                  iterations={5}
-                  strokeWidth={3}
-                  color="#22c55e"
-                >
-                  Build
-                </RoughNotation>
-              </span>
-            </h2>
-            <p className="waitlist-subtitle">
-              Join the waitlist and we’ll notify you as soon as early access
-              opens.
-            </p>
             <Form />
           </div>
         </section>
-        <p className="privacy-note">
-          We respect your privacy, unsubscribe anytime
-        </p>
       </div>
     </section>
   );

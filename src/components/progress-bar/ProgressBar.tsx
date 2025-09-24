@@ -48,7 +48,7 @@ function ProgressBar() {
     count !== null ? Math.min((count / TOTAL_SPOTS) * 100, 100) : 0;
 
   return (
-    <div ref={ref}>
+    <div style={{ width: "100%" }} ref={ref}>
       <h3 className="progress-title">Founding Member Progress</h3>
 
       {/* Progress Bar */}

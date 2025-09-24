@@ -1,16 +1,13 @@
 import Step from "@/components/sections/How-it-works/steps/Step";
-import Image from "next/image";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 
 function HowItWorks() {
   return (
     <section className="how-it-works" id="how-it-works">
-      <h2 className="section-title center">How It works</h2>
-      <p className="section-description center">
-        Three simple steps to find your perfect co-founder and build the next
-        big thing
-      </p>
+      <article className="how-it-works-article">
+        <h2 className="section-title center">How It works</h2>
+      </article>
       <div className="step-container">
         {/* STEP 1 */}
         <Fade className="slide" direction="left" cascade triggerOnce>

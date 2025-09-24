@@ -24,7 +24,7 @@ function Hero() {
                 padding={1}
                 iterations={3}
                 animationDelay={6}
-                color="#fff"
+                color="#22c55e"
                 strokeWidth={3}
               >
                 African
