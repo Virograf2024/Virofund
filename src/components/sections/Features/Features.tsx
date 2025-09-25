@@ -7,7 +7,7 @@ import { RoughNotation } from "react-rough-notation";
 function Features() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false });
   return (
-    <Fade direction="up" className="fade" triggerOnce fraction={0.3}>
+    <Fade direction="up" className="fade" triggerOnce fraction={0.1}>
       <section
         className="features-container"
         id="features"
