@@ -9,13 +9,19 @@ import { useInView } from "react-intersection-observer";
 const UserSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
+  phone: Yup.string()
+    .matches(/^[0-9]+$/, "Phone must contain only digits")
+    .min(10, "Phone must be at least 10 digits")
+    .max(15, "Phone must not exceed 15 digits")
+    .required("Phone number is required"),
 });
 
 function Form() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false });
+
   return (
     <Formik
-      initialValues={{ name: "", email: "" }}
+      initialValues={{ name: "", email: "", phone: "" }}
       validationSchema={UserSchema}
       validateOnChange={false}
       validateOnBlur={false}
@@ -42,17 +48,9 @@ function Form() {
       }}
     >
       {({ isSubmitting }) => (
-        <FormikForm
-          ref={ref}
-          // style={{
-          //   boxShadow: inView ? "0 6px 20px rgba(0, 0, 0, 0.2)" : "none",
-          //   transition: "box-shadow 0.3s ease-in-out 0.5s",
-          // }}
-          className="waitlist-form"
-          id="waitlist"
-        >
+        <FormikForm ref={ref} className="waitlist-form" id="waitlist">
           <div>
-            <label>
+            <label htmlFor="name">
               <p className="label">Name</p>
             </label>
             <Field
@@ -60,10 +58,12 @@ function Form() {
               name="name"
               id="name"
               placeholder="Enter your name"
+              className="waitlist-input"
             />
           </div>
+
           <div>
-            <label>
+            <label htmlFor="email">
               <p className="label">Email</p>
             </label>
             <Field
@@ -71,8 +71,23 @@ function Form() {
               name="email"
               id="email"
               placeholder="Enter your email"
+              className="waitlist-input"
             />
           </div>
+
+          <div>
+            <label htmlFor="phone">
+              <p className="label">Phone Number</p>
+            </label>
+            <Field
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="Enter your phone number"
+              className="waitlist-input"
+            />
+          </div>
+
           <button
             type="submit"
             disabled={isSubmitting}
@@ -80,6 +95,7 @@ function Form() {
           >
             {isSubmitting ? "Saving..." : "Join the waitlist – 500 spot left"}
           </button>
+
           <p className="privacy-note">
             We respect your privacy, unsubscribe anytime
           </p>

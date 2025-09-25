@@ -12,13 +12,13 @@ function Footer() {
             <p className="footer-title">Virofund</p>
           </div>
           <div className="footer-item">
-            <Image src="/svgs/gmail.svg" width={30} height={30} alt="gmail" />
+            <Image src="/svgs/gmail.svg" width={20} height={20} alt="gmail" />
             <a href="mailto:virograf2024@gmail.com" className="footer-link">
               virograf2024@gmail.com
             </a>
           </div>
           <div className="footer-item">
-            <Image src="/svgs/phone.svg" width={30} height={30} alt="gmail" />
+            <Image src="/svgs/phone.svg" width={20} height={20} alt="gmail" />
             <article className="footer-logo">
               <p className="footer-link">+234 816 312 2231,</p>{" "}
               <p className="footer-link">+234 816 312 2231</p>
