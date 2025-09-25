@@ -7,8 +7,8 @@ import Button from "@/components/button/Button";
 function Navbar() {
   const [isShown, setIsShown] = useState(false);
   return (
-    <nav className="header border">
-      <div className="logo border">
+    <nav className="header">
+      <div className="logo">
         <Image
           src="/Group 264 (1).png"
           alt="Virofund Logo"
@@ -18,7 +18,7 @@ function Navbar() {
         />
         {/* <p>By Virograf</p> */}
       </div>
-      <div className="nav-children desktop border">
+      <div className="nav-children">
         <a href="#features" className="nav-child">
           Features
         </a>
@@ -29,7 +29,7 @@ function Navbar() {
           Join the waitlist
         </a>
       </div>
-      <div className="nav-child desktop border">
+      <div className="nav-child desktop">
         <Button isDisabled={true} text="View Product" hasImage={false} />
       </div>
 
