@@ -35,7 +35,7 @@ function Features() {
                     </span>
                   </span>
                 </h2>
-                <p className="section-description feature-desc">
+                <p className="section-description feature-desc match-desc">
                   Most startups don’t fail because the idea is weak or the
                   funding isn’t there—they fail because the right team isn’t in
                   place. Lone founders often face blind spots, skill gaps, and

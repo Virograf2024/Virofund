@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Button from "@/components/button/Button";
 
 const items = [
   {
@@ -29,7 +30,9 @@ function Sidebar({ cancel }: { cancel: () => void }) {
             </a>
           ))}
         </div>
-        <div className="sidebar-item product">View Products</div>
+        <div className="sidebar-item">
+          <Button isDisabled={true} text="View Product" hasImage={false} />
+        </div>
       </div>
       <Image
         src="/cancel-svgrepo-com.svg"

@@ -11,8 +11,11 @@ function Hero() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false });
   return (
     <section className="hero">
-      <article className="hero-article">
-        <Fade direction="up" className="fade" triggerOnce>
+      <Fade direction="up" className="fade" triggerOnce>
+        <article className="hero-article">
+          <p className="badge hero-badge">
+            Limited-time Founding Member access
+          </p>
           <h1 className="hero-title">
             The Future of{" "}
             <span className="highlight" ref={ref}>
@@ -32,10 +35,12 @@ function Hero() {
             </span>
             Startups Starts With You.
           </h1>
-          <p className="hero-subtitle">
-            Virofund connects ambitious entreprenuers with the right co-founders
-            to build tomorrow’s billion dollar companies.
-          </p>
+          <article className="hero-subtitle">
+            <p className="hero-text">
+              Virofund connects ambitious entreprenuers with the right
+              co-founders to build tomorrow’s billion dollar companies.
+            </p>
+          </article>
           <a href="#waitlist" className="link">
             <Button
               text="Join the first 500 founders"
@@ -43,10 +48,18 @@ function Hero() {
               imageSrc="/Frame 1171275225.png"
             />
           </a>
-        </Fade>
-      </article>
+        </article>
+        <div className="hero-img">
+          <Image
+            src="/pngs/hero-img-two.png"
+            alt="hero"
+            width={700}
+            height={700}
+            className="img"
+          />
+        </div>
+      </Fade>
     </section>
   );
 }
-
 export default Hero;

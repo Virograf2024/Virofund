@@ -31,7 +31,7 @@ function Testimonials() {
                   Be Remembered as One of the First 500
                 </h2>
                 {/* Description */}
-                <p className="match-description text-dark">
+                <p className="match-desc match-description text-dark">
                   Your name will go down as part of the community that started
                   it all. Join today and claim your spot as a Founding Builder
                   of Virofund.

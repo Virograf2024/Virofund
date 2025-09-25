@@ -19,19 +19,19 @@ function Navbar() {
         {/* <p>By Virograf</p> */}
       </div>
       <div className="nav-children desktop">
-        <a href="#how-it-works" className="nav-child">
+        <a href="" className="nav-child">
           How it works
         </a>
-        <a href="#waitlist" className="nav-child">
-          Wait list
+        <a href="" className="nav-child">
+          Vision
         </a>
-        <a href="#contact" className="nav-child">
-          Contact us
+        <a href="" className="nav-child">
+          Founders
         </a>
       </div>
-      {/* <div className="nav-child">
+      <div className="nav-child desktop">
         <Button isDisabled={true} text="View Product" hasImage={false} />
-      </div> */}
+      </div>
 
       <div className="hamburger" onClick={() => setIsShown(!isShown)}>
         <Image
