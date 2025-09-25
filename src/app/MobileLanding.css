@@ -53,11 +53,6 @@ a:focus {
   padding: 4px;
 }
 
-/* Remove old border class */
-.border {
-  /* border: 1px solid black; */
-}
-
 *,
 *::before,
 *::after {
@@ -378,8 +373,8 @@ a:visited {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3em 0 2em 0;
-  margin-top: 2em;
+  /* padding: 3em 0 2em 0; */
+  /* margin-top: 2em; */
 }
 
 .feature-badge {
@@ -450,6 +445,9 @@ a:visited {
   padding: 1em;
   border-radius: 24px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* HOW IT WORKS SECTION STYLES */
@@ -800,8 +798,8 @@ input:focus-within {
 .footer-nav > div:first-child {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-end;
+  text-align: right;
 }
 
 /* Style the 'By Virograf' text to be directly under logo */
@@ -876,10 +874,10 @@ input:focus-within {
     max-width: 600px;
   }
 
-  .feature-badge-container {
+  /* .feature-badge-container {
     padding: 4em 0 2em 0;
     margin-top: 3em;
-  }
+  } */
 
   /* .hero-title {
     font-size: 32px;
@@ -1074,10 +1072,10 @@ input:focus-within {
     max-width: 650px;
   }
 
-  .feature-badge-container {
+  /* .feature-badge-container {
     padding: 3em 0 2em 0;
     margin-top: 2em;
-  }
+  } */
 
   .matchmaking-png {
     height: 400px;

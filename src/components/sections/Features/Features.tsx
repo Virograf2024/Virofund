@@ -8,7 +8,11 @@ function Features() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false });
   return (
     <Fade direction="up" className="fade" triggerOnce fraction={0.3}>
-      <section className="features-container" id="features" aria-labelledby="features-heading">
+      <section
+        className="features-container"
+        id="features"
+        aria-labelledby="features-heading"
+      >
         <section className="features">
           <div>
             <div className="feature-badge-container">
@@ -18,7 +22,10 @@ function Features() {
             </div>
             <div className="feature-img-and-txt">
               <div>
-                <h2 id="features-heading" className="section-title feature-title">
+                <h2
+                  id="features-heading"
+                  className="section-title feature-title"
+                >
                   It&apos;s Not The{" "}
                   <span className="highlight">
                     Lack of{" "}
@@ -37,10 +44,10 @@ function Features() {
                 </h2>
                 <p className="section-description feature-desc match-desc">
                   Most startups don&apos;t fail because the idea is weak or the
-                  funding isn&apos;t there—they fail because the right team isn&apos;t in
-                  place. Lone founders often face blind spots, skill gaps, and
-                  burnout trying to build everything themselves. Without
-                  co-founders who share the vision and complement their
+                  funding isn&apos;t there—they fail because the right team
+                  isn&apos;t in place. Lone founders often face blind spots,
+                  skill gaps, and burnout trying to build everything themselves.
+                  Without co-founders who share the vision and complement their
                   strengths, even the best ideas can stall before they reach
                   their true potential.
                 </p>
@@ -57,7 +64,10 @@ function Features() {
             />
           </div>
         </section>
-        <section className="testimonials" aria-labelledby="testimonials-heading">
+        <section
+          className="testimonials"
+          aria-labelledby="testimonials-heading"
+        >
           <div className="testimonials-body">
             <div style={{ width: "100%" }}>
               <Image
@@ -69,7 +79,9 @@ function Features() {
               />
             </div>
             <div>
-              <div className="badge" role="complementary">The Smart Way to Build Stronger Startups</div>
+              <div className="badge" role="complementary">
+                The Smart Way to Build Stronger Startups
+              </div>
               <h2 id="testimonials-heading" className="testimonials-title">
                 Find the Right Co-Founders. Build with Vision, Skill &
                 Compatibility.
@@ -77,10 +89,10 @@ function Features() {
               <p>
                 Virofund connects ambitious entrepreneurs with co-founders who
                 align on vision, bring diverse skills, and match in
-                compatibility. It&apos;s not just about finding a partner—it&apos;s about
-                building the right team from day one. With stronger foundations,
-                startups can move faster, innovate smarter, and grow into
-                sustainable, high-impact businesses.
+                compatibility. It&apos;s not just about finding a
+                partner—it&apos;s about building the right team from day one.
+                With stronger foundations, startups can move faster, innovate
+                smarter, and grow into sustainable, high-impact businesses.
               </p>
             </div>
           </div>

@@ -25,19 +25,23 @@ function Navbar() {
       >
         <nav className="header" role="navigation" aria-label="Main navigation">
           <div className="logo">
-            <Link href="/" aria-label="Virofund home page" className="logo-link">
+            <Link
+              href="/"
+              aria-label="Virofund home page"
+              className="logo-link"
+            >
               <div className="logo-content">
                 <Image
                   src="/svgs/logo.svg"
                   alt="Virofund - Connect with Co-Founders"
                   width={30}
                   height={30}
-                  className="logo-img border"
+                  className="logo-img"
                   priority
                 />
                 <p>Virofund</p>
               </div>
-              <p className="border">by virograf</p>
+              <p>By Virograf</p>
             </Link>
           </div>
 

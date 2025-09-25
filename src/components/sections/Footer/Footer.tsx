@@ -40,7 +40,7 @@ function Footer() {
             />
             <div className="footer-logo">
               <p className="footer-link">+234 816 312 2231,</p>{" "}
-              <p className="footer-link">+234 816 312 2231</p>
+              <p className="footer-link">+234 916 159 1763</p>
             </div>
           </div>
           <div className="footer-finale">
