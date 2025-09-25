@@ -1,5 +1,4 @@
 import Image from "next/image";
-// import testImage from "../../../../../public"
 
 interface StepProps {
   imageSrc: string;
@@ -12,7 +11,7 @@ interface StepProps {
 
 function Step({ ...props }: StepProps) {
   return (
-    <div className="step" style={{ background: props.background }}>
+    <article className="step" style={{ background: props.background }} role="listitem">
       <div className="step-header">
         <div className="step-image-container">
           <div className="step-icon">
@@ -27,10 +26,10 @@ function Step({ ...props }: StepProps) {
       </div>
       <h3 className="step-title">{props.title}</h3>
       <p className="step-description">{props.description}</p>
-      <div className="step-number">
+      <div className="step-number" aria-hidden="true">
         <Image src={props.stepNumber} width={40} height={40} alt="" />
       </div>
-    </div>
+    </article>
   );
 }
 

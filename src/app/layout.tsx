@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Virofund | One Match Away",
-  description: "Landing page for virofund",
+  title: "Virofund | Connect with Co-Founders to Build Tomorrow's Startups",
+  description: "Virofund connects ambitious African entrepreneurs with the right co-founders to build billion dollar companies. Join the waitlist for founding member access.",
+  keywords: "startup, co-founder, African entrepreneurs, startup matching, business partners, startup community",
   authors: [
     {
       name: "Virograf",
@@ -24,6 +25,22 @@ export const metadata: Metadata = {
       name: "Stephen Paul",
     },
   ],
+  openGraph: {
+    title: "Virofund | Connect with Co-Founders to Build Tomorrow's Startups",
+    description: "Virofund connects ambitious African entrepreneurs with the right co-founders to build billion dollar companies.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Virofund | Connect with Co-Founders to Build Tomorrow's Startups",
+    description: "Virofund connects ambitious African entrepreneurs with the right co-founders to build billion dollar companies.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({

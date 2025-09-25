@@ -4,12 +4,11 @@ import { Fade } from "react-awesome-reveal";
 
 function HowItWorks() {
   return (
-    <section className="how-it-works" id="how-it-works">
-      <article className="how-it-works-article">
-        <h2 className="section-title center">How It works</h2>
-      </article>
-      <div className="step-container">
-        {/* STEP 1 */}
+    <section className="how-it-works" id="how-it-works" aria-labelledby="how-it-works-title">
+      <div className="how-it-works-article">
+        <h2 id="how-it-works-title" className="section-title center">How It Works</h2>
+      </div>
+      <div className="step-container" role="list" aria-label="Steps to get started with Virofund">
         <Fade className="slide" direction="left" cascade triggerOnce>
           <Step
             alt="Create Profile"
@@ -19,21 +18,19 @@ function HowItWorks() {
             background="#CCFFCC"
             stepNumber="/svgs/one-image.svg"
           />
-          {/* STEP 2 */}
           <Step
             title="Get Matched"
-            description="We pair you by ambition, skills and founder marker fit."
+            description="We pair you by ambition, skills and founder market fit."
             imageSrc="/get-matched.png"
             alt="Get Matched"
             background="#E3F2FF"
             stepNumber="/svgs/two-image.svg"
           />
-          {/* STEP 3 */}
           <Step
             title="Start Building Together"
             imageSrc="/start-building.jpg"
             alt="Start Building Together"
-            description="Kick Off with clarity, shared goals and momentum"
+            description="Kick off with clarity, shared goals and momentum"
             background="#FFE6E7"
             stepNumber="/svgs/three-image.svg"
           />

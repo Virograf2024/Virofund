@@ -7,18 +7,16 @@ import Form from "@/components/form/Form";
 function Waitlist() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false });
   return (
-    <section className="waitlist-section">
-      {/* The uploaded image above */}
-      {/* Waitlist Card */}
+    <section className="waitlist-section" id="waitlist" aria-labelledby="waitlist-title">
       <div className="waitlist">
-        <section className="waitlist-and-image">
+        <div className="waitlist-and-image">
           <div className="waitlist-child">
             <div>
-              <div className="waitlist-badge badge">
+              <div className="waitlist-badge badge" role="complementary">
                 Only 500 spots + founding cohort
               </div>
-              <h2 className="waitlist-title">
-                Don’t Just Dream.{" "}
+              <h2 id="waitlist-title" className="waitlist-title">
+                Don't Just Dream.{" "}
                 <span ref={ref}>
                   <RoughNotation
                     type="underline"
@@ -34,13 +32,13 @@ function Waitlist() {
                 </span>
               </h2>
               <p className="waitlist-subtitle">
-                Join the waitlist and we’ll notify you as soon as early access
+                Join the waitlist and we'll notify you as soon as early access
                 opens.
               </p>
             </div>
             <Form />
           </div>
-        </section>
+        </div>
       </div>
     </section>
   );

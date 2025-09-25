@@ -3,47 +3,80 @@ import { useState } from "react";
 import Image from "next/image";
 import Sidebar from "@/components/sidebar/Sidebar";
 import Button from "@/components/button/Button";
+import { useInView } from "react-intersection-observer";
 
 function Navbar() {
   const [isShown, setIsShown] = useState(false);
-  return (
-    <nav className="header">
-      <div className="logo">
-        <Image
-          src="/Group 264 (1).png"
-          alt="Virofund Logo"
-          width={150}
-          height={70}
-          className="logo-img"
-        />
-        {/* <p>By Virograf</p> */}
-      </div>
-      <div className="nav-children">
-        <a href="#features" className="nav-child">
-          Features
-        </a>
-        <a href="#how-it-works" className="nav-child">
-          How it works
-        </a>
-        <a href="#waitlist" className="nav-child">
-          Join the waitlist
-        </a>
-      </div>
-      <div className="nav-child desktop">
-        <Button isDisabled={true} text="View Product" hasImage={false} />
-      </div>
 
-      <div className="hamburger" onClick={() => setIsShown(!isShown)}>
-        <Image
-          src="/svgs/hamburger.svg"
-          className="img"
-          width={50}
-          height={50}
-          alt="hamburger menu"
-        />
-      </div>
-      {isShown && <Sidebar cancel={() => setIsShown(false)} />}
-    </nav>
+  // track when the top sentinel is visible
+  const { ref, inView } = useInView({
+    threshold: 0, // trigger as soon as it leaves/enters
+  });
+
+  return (
+    <>
+      {/* Sentinel: invisible spacer before navbar */}
+      <div ref={ref} />
+
+      <header
+        role="banner"
+        className={`navbar ${inView ? "" : "navbar--fixed"}`}
+      >
+        <nav className="header" role="navigation" aria-label="Main navigation">
+          <div className="logo">
+            <a href="/" aria-label="Virofund home page">
+              <Image
+                src="/Group 264 (1).png"
+                alt="Virofund - Connect with Co-Founders"
+                width={150}
+                height={70}
+                className="logo-img"
+                priority
+              />
+            </a>
+          </div>
+
+          <ul className="nav-children desktop" role="menubar">
+            <li role="none">
+              <a href="#features" className="nav-child" role="menuitem">
+                Features
+              </a>
+            </li>
+            <li role="none">
+              <a href="#how-it-works" className="nav-child" role="menuitem">
+                How it works
+              </a>
+            </li>
+            <li role="none">
+              <a href="#waitlist" className="nav-child" role="menuitem">
+                Join the waitlist
+              </a>
+            </li>
+          </ul>
+
+          <div className="nav-child desktop">
+            <Button isDisabled={true} text="View Product" hasImage={false} />
+          </div>
+
+          <button
+            className="hamburger"
+            onClick={() => setIsShown(!isShown)}
+            aria-label={isShown ? "Close menu" : "Open menu"}
+          >
+            <Image
+              src="/svgs/hamburger.svg"
+              className="img"
+              width={24}
+              height={24}
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+
+          {isShown && <Sidebar cancel={() => setIsShown(false)} />}
+        </nav>
+      </header>
+    </>
   );
 }
 

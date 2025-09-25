@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 interface ButtonProps {
@@ -10,33 +10,25 @@ interface ButtonProps {
 }
 
 function Button({ text, hasImage, imageSrc, isDisabled }: ButtonProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
   return (
     <button
       type="button"
       disabled={isDisabled}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       className={`link-btn cta-button primary flex items-center gap-1 ${
-        isDisabled && "disabled"
+        isDisabled ? "disabled" : ""
       }`}
+      aria-label={isDisabled ? `${text} (unavailable)` : text}
     >
       {hasImage && imageSrc && (
-        <Image src={imageSrc} alt="Icon" width={40} height={20} />
+        <Image 
+          src={imageSrc} 
+          alt="" 
+          width={40} 
+          height={20} 
+          aria-hidden="true"
+        />
       )}
       {text}
-      {/* {isDisabled && isHovered && (
-        <p className="tool-tip">product unavailable</p>
-      )} */}
     </button>
   );
 }

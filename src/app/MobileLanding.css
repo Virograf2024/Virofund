@@ -4,8 +4,58 @@
 body {
   font-size: 16px;
 }
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus styles for better accessibility - only for interactive elements */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus {
+  outline: 2px solid #22c55e;
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #22c55e;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Removed footer button styling to maintain original appearance */
+
+/* Sidebar close button */
+.sidebar-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Remove old border class */
 .border {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 *,
@@ -69,10 +119,17 @@ a:visited {
 }
 
 .nav-children {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 1em;
   transition: all 0.3s ease-in-out;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-children li {
+  margin: 0;
 }
 .nav-child:link {
   color: #1a1a1a;
@@ -715,6 +772,7 @@ input:focus-within {
 
 .footer-bottom-container {
   padding: 0 1.5em;
+  /* border-top: 1px solid black; */
 }
 .footer-bottom {
   display: flex;
@@ -1122,4 +1180,24 @@ input:focus-within {
 .label {
   color: white;
   margin: 0;
+}
+/* Default navbar (relative position) */
+.navbar {
+  position: relative;
+  width: 100%;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Sticky/fixed navbar when scrolled past */
+.navbar--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white; /* ensures visibility */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+.footer-container {
+  padding: 0 1.5em;
 }
