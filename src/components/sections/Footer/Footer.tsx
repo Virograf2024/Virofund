@@ -6,14 +6,17 @@ function Footer() {
     <section className="footer-container">
       <footer className="footer" role="contentinfo">
         <section className="footer-nav">
-          <div className="footer-logo">
-            <Image
-              src="/svgs/logo.svg"
-              width={70}
-              height={70}
-              alt="Virofund logo"
-            />
-            <p className="footer-title">Virofund</p>
+          <div className="margin">
+            <div className="footer-logo">
+              <Image
+                src="/svgs/logo.svg"
+                width={70}
+                height={70}
+                alt="Virofund logo"
+              />
+              <p className="footer-title">Virofund</p>
+            </div>
+            <p>By Virograf</p>
           </div>
           <div className="footer-item">
             <Image

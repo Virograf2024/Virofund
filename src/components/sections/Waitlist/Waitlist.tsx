@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { RoughNotation } from "react-rough-notation";
 import { useInView } from "react-intersection-observer";
 import Form from "@/components/form/Form";
@@ -16,7 +15,7 @@ function Waitlist() {
                 Only 500 spots + founding cohort
               </div>
               <h2 id="waitlist-title" className="waitlist-title">
-                Don't Just Dream.{" "}
+                Don&apos;t Just Dream.{" "}
                 <span ref={ref}>
                   <RoughNotation
                     type="underline"
@@ -32,7 +31,7 @@ function Waitlist() {
                 </span>
               </h2>
               <p className="waitlist-subtitle">
-                Join the waitlist and we'll notify you as soon as early access
+                Join the waitlist and we&apos;ll notify you as soon as early access
                 opens.
               </p>
             </div>

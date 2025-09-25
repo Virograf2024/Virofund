@@ -11,7 +11,7 @@ interface StepProps {
 
 function Step({ ...props }: StepProps) {
   return (
-    <article className="step" style={{ background: props.background }} role="listitem">
+    <article className="step" style={{ background: props.background }}>
       <div className="step-header">
         <div className="step-image-container">
           <div className="step-icon">

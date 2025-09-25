@@ -36,8 +36,8 @@ function Features() {
                   </span>
                 </h2>
                 <p className="section-description feature-desc match-desc">
-                  Most startups don't fail because the idea is weak or the
-                  funding isn't there—they fail because the right team isn't in
+                  Most startups don&apos;t fail because the idea is weak or the
+                  funding isn&apos;t there—they fail because the right team isn&apos;t in
                   place. Lone founders often face blind spots, skill gaps, and
                   burnout trying to build everything themselves. Without
                   co-founders who share the vision and complement their
@@ -77,7 +77,7 @@ function Features() {
               <p>
                 Virofund connects ambitious entrepreneurs with co-founders who
                 align on vision, bring diverse skills, and match in
-                compatibility. It's not just about finding a partner—it's about
+                compatibility. It&apos;s not just about finding a partner—it&apos;s about
                 building the right team from day one. With stronger foundations,
                 startups can move faster, innovate smarter, and grow into
                 sustainable, high-impact businesses.

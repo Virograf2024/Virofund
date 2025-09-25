@@ -12,7 +12,7 @@ function Testimonials() {
       <section className="matching-article" aria-labelledby="beyond-matchmaking-title">
         <h2 id="beyond-matchmaking-title" className="section-title">Beyond Matchmaking</h2>
         <p className="match-desc">
-          We don't just connect you with potential co-founders. We provide
+          We don&apos;t just connect you with potential co-founders. We provide
           the tools, resources, and community support you need to build lasting
           partnerships and successful startups.
         </p>

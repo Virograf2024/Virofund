@@ -37,7 +37,7 @@ function Hero() {
           <div className="hero-subtitle">
             <p className="hero-text">
               Virofund connects ambitious entrepreneurs with the right
-              co-founders to build tomorrow's billion dollar companies.
+              co-founders to build tomorrow&apos;s billion dollar companies.
             </p>
           </div>
           <a href="#waitlist" className="link" aria-label="Navigate to waitlist signup form">

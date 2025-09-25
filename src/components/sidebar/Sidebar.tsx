@@ -19,46 +19,28 @@ const items = [
 
 function Sidebar({ cancel }: { cancel: () => void }) {
   return (
-    <div 
-      className="sidebar" 
-      id="mobile-menu"
-      role="dialog" 
-      aria-modal="true" 
-      aria-label="Mobile navigation menu"
-    >
-      <nav className="sidebar-content" role="navigation" aria-label="Mobile navigation">
-        <ul className="sidebar-content-child" role="menu">
+    <div className="sidebar">
+      <div className="sidebar-content">
+        <div className="sidebar-content-child">
           {items.map((item, index) => (
-            <li key={index} role="none">
-              <a 
-                href={item.href} 
-                className="sidebar-item nav-item" 
-                onClick={cancel}
-                role="menuitem"
-              >
+            <a key={index} href={`${item.href}`}>
+              <div className="sidebar-item nav-item" onClick={cancel}>
                 {item.label}
-              </a>
-            </li>
+              </div>
+            </a>
           ))}
-        </ul>
+        </div>
         <div className="sidebar-item">
           <Button isDisabled={true} text="View Product" hasImage={false} />
         </div>
-      </nav>
-      <button
+      </div>
+      <Image
+        src="/cancel-svgrepo-com.svg"
         onClick={cancel}
-        className="sidebar-close"
-        aria-label="Close mobile menu"
-        type="button"
-      >
-        <Image
-          src="/cancel-svgrepo-com.svg"
-          alt=""
-          width={30}
-          height={30}
-          aria-hidden="true"
-        />
-      </button>
+        alt="cancel"
+        width={30}
+        height={30}
+      />
     </div>
   );
 }

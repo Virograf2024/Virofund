@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Sidebar from "@/components/sidebar/Sidebar";
 import Button from "@/components/button/Button";
 import { useInView } from "react-intersection-observer";
@@ -24,16 +25,20 @@ function Navbar() {
       >
         <nav className="header" role="navigation" aria-label="Main navigation">
           <div className="logo">
-            <a href="/" aria-label="Virofund home page">
-              <Image
-                src="/Group 264 (1).png"
-                alt="Virofund - Connect with Co-Founders"
-                width={150}
-                height={70}
-                className="logo-img"
-                priority
-              />
-            </a>
+            <Link href="/" aria-label="Virofund home page" className="logo-link">
+              <div className="logo-content">
+                <Image
+                  src="/svgs/logo.svg"
+                  alt="Virofund - Connect with Co-Founders"
+                  width={30}
+                  height={30}
+                  className="logo-img border"
+                  priority
+                />
+                <p>Virofund</p>
+              </div>
+              <p className="border">by virograf</p>
+            </Link>
           </div>
 
           <ul className="nav-children desktop" role="menubar">
