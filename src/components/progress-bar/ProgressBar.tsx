@@ -6,7 +6,7 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const TOTAL_SPOTS = 500;
-const BASE_COUNT = 380; // starting point
+const BASE_COUNT = 325; // starting point
 
 function ProgressBar() {
   const [count, setCount] = useState<number | null>(null);
