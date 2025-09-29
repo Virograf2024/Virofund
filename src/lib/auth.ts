@@ -1,7 +1,15 @@
 import { db } from "./firebase";
 import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
 
-async function addUser({ name, email }: { name: string; email: string }) {
+async function addUser({
+  name,
+  email,
+  phone,
+}: {
+  name: string;
+  email: string;
+  phone: string;
+}) {
   try {
     const usersRef = collection(db, "wait list");
 
@@ -18,6 +26,7 @@ async function addUser({ name, email }: { name: string; email: string }) {
     const docRef = await addDoc(usersRef, {
       name,
       email,
+      phone,
       createdAt: new Date(),
     });
 
@@ -28,5 +37,17 @@ async function addUser({ name, email }: { name: string; email: string }) {
     return { success: false, message: "Error adding user" };
   }
 }
-
+export async function fetchWaitlist() {
+  const querySnapshot = await getDocs(collection(db, "wait list"));
+  const results = querySnapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+  return results as {
+    id: string;
+    name: string;
+    email: string;
+    phone: string;
+  }[];
+}
 export { addUser };

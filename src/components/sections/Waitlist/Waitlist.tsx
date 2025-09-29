@@ -2,11 +2,17 @@ import React from "react";
 import { RoughNotation } from "react-rough-notation";
 import { useInView } from "react-intersection-observer";
 import Form from "@/components/form/Form";
+import { fetchWaitlist } from "@/lib/auth";
 
 function Waitlist() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false });
+  fetchWaitlist();
   return (
-    <section className="waitlist-section" id="waitlist" aria-labelledby="waitlist-title">
+    <section
+      className="waitlist-section"
+      id="waitlist"
+      aria-labelledby="waitlist-title"
+    >
       <div className="waitlist">
         <div className="waitlist-and-image">
           <div className="waitlist-child">
@@ -31,8 +37,8 @@ function Waitlist() {
                 </span>
               </h2>
               <p className="waitlist-subtitle">
-                Join the waitlist and we&apos;ll notify you as soon as early access
-                opens.
+                Join the waitlist and we&apos;ll notify you as soon as early
+                access opens.
               </p>
             </div>
             <Form />
