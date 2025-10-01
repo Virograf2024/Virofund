@@ -111,9 +111,10 @@ function Form() {
       {successModal && (
         <div className="modal">
           <div className="modal-content">
-            <h2>🎉 You're on the waitlist! </h2>
+            <h2>🎉 You&lsquo;re on the waitlist! </h2>
             <p>
-              You’re in early — don’t miss out. Our WhatsApp community is where
+              You&lsquo;re in early — don&lsquo;t miss out. Our WhatsApp
+              community is where
               <strong>
                 {" "}
                 exclusive announcements, beta invites, and founder insights{" "}
