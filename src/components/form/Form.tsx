@@ -1,10 +1,13 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form as FormikForm, Field } from "formik";
 import * as Yup from "yup";
 import { addUser } from "@/lib/auth";
 import toast from "react-hot-toast";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
+import cancel from "../../../public/svgs/cancel-circle-svgrepo-com.svg";
+import Link from "next/link";
 
 const UserSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
@@ -18,90 +21,124 @@ const UserSchema = Yup.object().shape({
 
 function Form() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false });
+  const [successModal, setSuccessModal] = useState(false);
 
   return (
-    <Formik
-      initialValues={{ name: "", email: "", phone: "" }}
-      validationSchema={UserSchema}
-      validateOnChange={false}
-      validateOnBlur={false}
-      onSubmit={async (values, { resetForm, setSubmitting }) => {
-        const result = await addUser(values);
-        if (result.success) {
-          toast.success("User added successfully!");
-          resetForm();
-        } else {
-          alert(`⚠️ ${result.message}`);
-        }
-        setSubmitting(false);
-      }}
-      validate={(values) => {
-        try {
-          UserSchema.validateSync(values, { abortEarly: false });
-        } catch (err) {
-          if (err instanceof Yup.ValidationError) {
-            const messages = err.errors.join("\n");
-            toast.error(`${messages}`);
+    <>
+      <Formik
+        initialValues={{ name: "", email: "", phone: "" }}
+        validationSchema={UserSchema}
+        validateOnChange={false}
+        validateOnBlur={false}
+        onSubmit={async (values, { resetForm, setSubmitting }) => {
+          const result = await addUser(values);
+          if (result.success) {
+            toast.success("User added successfully!");
+            setSuccessModal(true);
+            resetForm();
+          } else {
+            toast.error(`⚠️ ${result.message}`);
           }
-        }
-        return {}; // must return an object
-      }}
-    >
-      {({ isSubmitting }) => (
-        <FormikForm ref={ref} className="waitlist-form" id="waitlist">
-          <div>
-            <label htmlFor="name">
-              <p className="label">Name</p>
-            </label>
-            <Field
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Enter your name"
-              className="waitlist-input"
+          setSubmitting(false);
+        }}
+        validate={(values) => {
+          try {
+            UserSchema.validateSync(values, { abortEarly: false });
+          } catch (err) {
+            if (err instanceof Yup.ValidationError) {
+              const messages = err.errors.join("\n");
+              toast.error(`${messages}`);
+            }
+          }
+          return {}; // must return an object
+        }}
+      >
+        {({ isSubmitting }) => (
+          <FormikForm ref={ref} className="waitlist-form" id="waitlist">
+            <div>
+              <label htmlFor="name">
+                <p className="label">Name</p>
+              </label>
+              <Field
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
+                className="waitlist-input"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email">
+                <p className="label">Email</p>
+              </label>
+              <Field
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+                className="waitlist-input"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="phone">
+                <p className="label">Phone Number</p>
+              </label>
+              <Field
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Enter your phone number"
+                className="waitlist-input"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="waitlist-btn"
+            >
+              {isSubmitting ? "Saving..." : "Join the waitlist – 500 spot left"}
+            </button>
+
+            <p className="privacy-note">
+              We respect your privacy, unsubscribe anytime
+            </p>
+          </FormikForm>
+        )}
+      </Formik>
+      {successModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>🎉 You're on the waitlist! </h2>
+            <p>
+              You’re in early — don’t miss out. Our WhatsApp community is where
+              <strong>
+                {" "}
+                exclusive announcements, beta invites, and founder insights{" "}
+              </strong>
+              drop first. Join now before everyone else gets in ⏳ .
+            </p>
+            <Link
+              href="https://chat.whatsapp.com/CwtBxsR7utF5t9VAnjE6dC?mode=ac_t"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="waitlist-btn">Join WhatsApp Community</button>
+            </Link>
+            <Image
+              src={cancel}
+              alt="cancel"
+              onClick={() => setSuccessModal(false)}
+              className="cancel-modal"
+              width={20}
+              height={20}
             />
           </div>
-
-          <div>
-            <label htmlFor="email">
-              <p className="label">Email</p>
-            </label>
-            <Field
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email"
-              className="waitlist-input"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="phone">
-              <p className="label">Phone Number</p>
-            </label>
-            <Field
-              type="tel"
-              name="phone"
-              id="phone"
-              placeholder="Enter your phone number"
-              className="waitlist-input"
-            />
-          </div>
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="waitlist-btn"
-          >
-            {isSubmitting ? "Saving..." : "Join the waitlist – 500 spot left"}
-          </button>
-
-          <p className="privacy-note">
-            We respect your privacy, unsubscribe anytime
-          </p>
-        </FormikForm>
+        </div>
       )}
-    </Formik>
+    </>
   );
 }
 
